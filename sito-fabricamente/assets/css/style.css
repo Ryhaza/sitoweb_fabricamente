@@ -632,6 +632,216 @@ footer {
 }
 
 /* =========================================
+   8. PAGINA PROGETTI (Nuovi Stili)
+   ========================================= */
+
+/* Griglia e Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Card Progetto */
+.project-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-card.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Immagine Card */
+.project-thumb {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover .project-thumb img {
+    transform: scale(1.1);
+}
+
+.project-overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 107, 0, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+.project-card:hover .project-overlay-icon {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Info Card */
+.project-info {
+    padding: 25px;
+}
+
+.project-cat {
+    color: var(--primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.project-title {
+    color: white;
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Bottoni Filtri */
+.filter-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 8px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Finestra Modale (Popup) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.5rem;
+    border: none;
+    z-index: 10;
+}
+
+.close-modal:hover {
+    background: var(--primary);
+}
+
+/* Scrollbar Modale */
+.modal-content::-webkit-scrollbar { width: 8px; }
+.modal-content::-webkit-scrollbar-track { background: #1a1a1a; }
+.modal-content::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+@media(max-width: 768px) {
+    .modal-header-img { height: 200px; }
+    .modal-body { padding: 25px; }
+}
+
+/* =========================================
    7. MOBILE RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
@@ -739,3 +949,4 @@ footer {
 #CookiebotWidget {
     z-index: 10000 !important; /* Sempre sopra a tutto */
 }
+
