@@ -937,6 +937,27 @@ footer {
     }
 }
 
+/* =========================================
+   9. FIX CENTRATURA MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+    section, section.page-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .grid-3, .grid-2, .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px; /* Riduciamo leggermente il gap su mobile */
+    }
+
+    .card, .project-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
 #CookiebotWidget svg {
     fill: #ffffff !important;
 }
@@ -949,4 +970,6 @@ footer {
 #CookiebotWidget {
     z-index: 10000 !important; /* Sempre sopra a tutto */
 }
+
+
 
