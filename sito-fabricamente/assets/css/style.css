@@ -1,0 +1,707 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-dark: #0f0f0f;
+    --bg-section: #181818;
+    --bg-card: #202020;
+    --primary: #FF6B00;
+    --primary-dark: #cc5500;
+    --primary-glow: rgba(255, 107, 0, 0.4);
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.08);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   2. UTILITIES & TYPOGRAPHY
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+section.page-section {
+    padding: 80px 8%;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 span, h1 span {
+    color: var(--primary);
+}
+
+p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* Buttons */
+.btn, .btn-cta {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    text-align: center;
+}
+
+.btn-primary, .btn-cta {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-primary:hover, .btn-cta:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* =========================================
+   3. NAVIGATION (Unified & Fixed)
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+/* --- Aggiornamento CSS per Logo Immagine --- */
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 10001;
+    position: relative;
+    /* Rimuoviamo font-weight e font-size perché ora è un'immagine */
+}
+
+.logo img {
+    height: 50px; /* Regola questo valore in base all'altezza della tua navbar */
+    width: auto; /* Mantiene le proporzioni originali */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05); /* Un leggero effetto zoom quando ci passi sopra */
+}
+
+/* Rimuoviamo lo stile della vecchia icona se presente */
+.logo i {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    z-index: 10001;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Padding aumenta l'area cliccabile */
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
+/* Dropdown Fix */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Si attacca esattamente sotto */
+    left: -20px;
+    background-color: var(--bg-card);
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 10px 0;
+    border: 1px solid var(--border);
+    z-index: 10000;
+}
+
+/* Freccetta o spaziatura per evitare buchi nel mouse hover */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+}
+
+/* Mostra menu al passaggio del mouse su desktop */
+@media (min-width: 901px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+        animation: slideUp 0.3s ease;
+    }
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: white;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 107, 0, 0.1);
+    color: var(--primary);
+    padding-left: 30px;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   4. HERO SECTIONS
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-home {
+    background-image: linear-gradient(to right, rgba(15, 15, 15, 0.95) 30%, rgba(15, 15, 15, 0.4)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80');
+}
+
+.hero-page {
+    padding: 150px 8% 80px;
+    text-align: center;
+    background: radial-gradient(circle at top, #2a1a10 0%, var(--bg-dark) 60%);
+    min-height: 60vh;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding-left: 8%;
+    padding-right: 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.hero h1 span.outline {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    display: block;
+}
+
+.hero h1 span.highlight {
+    color: var(--primary);
+    -webkit-text-stroke: 0;
+}
+
+.hero p {
+    border-left: 4px solid var(--primary);
+    padding-left: 20px;
+}
+
+.hero-page p {
+    border-left: none;
+    padding-left: 0;
+    max-width: 700px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   5. CARDS & GRIDS
+   ========================================= */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 50px 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    background: rgba(255, 107, 0, 0.1);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.card-internal {
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.card-internal:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.card-internal i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card-internal h3 {
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+/* =========================================
+   6. PAGE SPECIFIC & FORMS
+   ========================================= */
+/* Feature Lists */
+.feature-list li, .spec-list li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.spec-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.spec-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list i, .spec-list i {
+    color: var(--primary);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.spec-list i {
+    font-size: 1.5rem;
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.portfolio-item {
+    position: relative;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, black, transparent);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Contact Form - RESTORED */
+.cta-section {
+    background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;
+    position: relative;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-wrapper {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Privacy Section */
+.privacy-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.privacy-title {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.privacy-group {
+    margin-bottom: 20px;
+}
+
+.privacy-text {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.radio-options {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-label, .checkbox-label {
+    font-size: 0.85rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    accent-color: var(--primary);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.privacy-link {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #050505;
+    padding: 80px 0 40px;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   7. MOBILE RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    section, section.page-section {
+        padding: 60px 5%;
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero, .hero-page {
+        padding-top: 120px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        border-left: none;
+        padding-left: 0;
+        margin: 0 auto 30px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #0f0f0f;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 100px;
+        align-items: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        z-index: 10000;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Dropdown Mobile: statico e visibile solo con classe attiva */
+    .dropdown-content {
+        position: static;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        display: none;
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    /* JS aggiunge la classe .active al LI */
+    li.dropdown.active .dropdown-content {
+        display: block;
+        animation: fadeIn 0.3s;
+    }
+
+    li.dropdown.active > a i {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
