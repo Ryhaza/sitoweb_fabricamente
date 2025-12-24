@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d835c56b-14bd-4fa3-99dc-661a1ab3457e" data-blockingmode="auto" type="text/javascript"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo | Fabricamente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* CSS Specifico per questa pagina per effetti moderni */
+        .vision-card {
+            border-left: 4px solid var(--primary);
+            padding-left: 30px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .team-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-img {
+            filter: grayscale(0%);
+        }
+
+        .team-info {
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .stat-modern {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--primary);
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <img src="assets/img/logo_fabricamente.png" alt="Fabricamente Logo">
+    </a>
+
+    <div class="hamburger"><i class="ri-menu-3-line"></i></div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+
+        <li class="dropdown">
+            <a href="#">Servizi <i class="ri-arrow-down-s-line"></i></a>
+            <div class="dropdown-content">
+                <a href="formazione.html">Formazione e Consulenza</a>
+                <a href="coaching.html">Coaching</a>
+                <a href="universita.html">Orientamento Universitario</a>
+                <a href="italiano.html">Corsi Italiano Stranieri</a>
+            </div>
+        </li>
+
+        <li><a href="carta-qualita.html">Carta Qualità</a></li>
+        <li><a href="index.html#progetti">Progetti</a></li>
+        <li><a href="index.html#contatti" class="btn btn-primary" style="padding: 10px 20px;">Contattaci</a></li>
+    </ul>
+</nav>
+
+<header class="hero-page" style="background: radial-gradient(circle at bottom right, #2a1a10 0%, var(--bg-dark) 70%); padding: 120px 0 60px; min-height: auto;">
+    <div class="container">
+        <h4 style="color: var(--primary); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; font-size: 1rem;">Chi siamo</h4>
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">Non solo Formazione. <br><span>Siamo il Tuo Futuro.</span></h1>
+        <p style="max-width: 600px; margin: 0 auto;">Dietro Fabricamente c'è una visione audace: trasformare il potenziale umano e aziendale in eccellenza misurabile.</p>
+    </div>
+</header>
+
+<section class="page-section">
+    <div class="container">
+        <div class="grid-2" style="align-items: center; gap: 60px;">
+            <div>
+                <h2>La Nostra <span style="border-bottom: 3px solid var(--primary);">Storia</span></h2>
+                <br>
+                <div class="vision-card">
+                    <p style="color: white; font-size: 1.1rem; margin-bottom: 20px;">
+                        Fabricamente nasce con un obiettivo chiaro: <strong>colmare il divario tra potenziale e risultati</strong>.
+                    </p>
+                    <p>
+                        In un mondo in costante evoluzione, le competenze statiche non bastano più. Siamo partiti come un piccolo gruppo di professionisti appassionati a Roma e Mantova, uniti dalla convinzione che la formazione non debba essere solo teorica, ma un vero motore di cambiamento.
+                    </p>
+                    <p>
+                        Oggi siamo un punto di riferimento per aziende che cercano riorganizzazione e per studenti che vogliono orientarsi nel mondo universitario digitale, mantenendo intatto il nostro spirito: <strong>l'eccellenza accessibile</strong>.
+                    </p>
+                </div>
+            </div>
+            <div style="position: relative;">
+                <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; border: 2px solid var(--primary); z-index: 0;"></div>
+                <div style="position: relative; z-index: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Work">
+                </div>
+
+                <div class="card-internal" style="position: absolute; bottom: -30px; left: -30px; z-index: 2; max-width: 200px; background: #202020; border: 1px solid var(--primary);">
+                    <div class="stat-modern">10+</div>
+                    <p style="margin:0; font-size: 0.9rem;">Anni di Esperienza nel settore Education</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background: var(--bg-section); padding: 100px 0;">
+    <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+            <h2>I Pilastri del Nostro <br><span>Metodo</span></h2>
+            <p>Non offriamo semplici corsi, ma strategie concrete. Ecco cosa ci rende diversi.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card card-internal">
+                <div style="display: flex; gap: 20px;">
+                    <i class="ri-focus-2-line" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Focus sugli Obiettivi</h3>
+                        <p style="margin-bottom: 0;">Ogni percorso inizia definendo dove vuoi arrivare. Non esiste una soluzione unica: costruiamo la strada insieme a te basandoci sui tuoi KPI reali.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-internal">
+                <div style="display: flex; gap: 20px;">
+                    <i class="ri-group-line" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Apprendimento Attivo</h3>
+                        <p style="margin-bottom: 0;">Niente teoria noiosa. Utilizziamo case study, simulazioni e role-play per garantire che le competenze acquisite siano applicabili dal giorno zero.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-internal">
+                <div style="display: flex; gap: 20px;">
+                    <i class="ri-heart-pulse-line" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Empatia e Ascolto</h3>
+                        <p style="margin-bottom: 0;">Che tu sia un CEO o uno studente, mettiamo la persona al centro. Capire le tue esigenze emotive e professionali è il primo passo per il successo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-internal">
+                <div style="display: flex; gap: 20px;">
+                    <i class="ri-rocket-line" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Innovazione Continua</h3>
+                        <p style="margin-bottom: 0;">Il mercato corre, noi corriamo più veloce. Aggiorniamo costantemente i nostri programmi per includere le ultime tendenze digitali e manageriali.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="container">
+        <h2>Il Team <br><span>Fabricamente</span></h2>
+        <p>Professionisti, coach e formatori uniti dalla passione per lo sviluppo.</p>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="CEO" class="team-img">
+                <div class="team-info">
+                    <h4 style="color: white; margin-bottom: 5px;">Nome Cognome</h4>
+                    <p style="color: var(--primary); margin: 0; font-size: 0.9rem;">CEO & Founder</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Head of Training" class="team-img">
+                <div class="team-info">
+                    <h4 style="color: white; margin-bottom: 5px;">Nome Cognome</h4>
+                    <p style="color: var(--primary); margin: 0; font-size: 0.9rem;">Head of Training</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Senior Coach" class="team-img">
+                <div class="team-info">
+                    <h4 style="color: white; margin-bottom: 5px;">Nome Cognome</h4>
+                    <p style="color: var(--primary); margin: 0; font-size: 0.9rem;">Senior Coach</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" alt="Tutor Universitario" class="team-img">
+                <div class="team-info">
+                    <h4 style="color: white; margin-bottom: 5px;">Nome Cognome</h4>
+                    <p style="color: var(--primary); margin: 0; font-size: 0.9rem;">Resp. Orientamento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
+    <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: 20px;">Pronto a lavorare con noi?</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px; color: #ddd;">Che tu voglia formare la tua azienda o iniziare un percorso universitario, siamo qui per ascoltarti.</p>
+        <a href="index.html#contatti" class="btn btn-primary">Contattaci Ora</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <img src="assets/img/logo_fabricamente.png" alt="Logo" style="height: 40px; opacity: 0.8;">
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    Formazione, consulenza e orientamento universitario. La tua crescita è la nostra missione.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Rapidi</h4>
+                <ul>
+                    <li><a href="formazione.html">Formazione Aziendale</a></li>
+                    <li><a href="coaching.html">Coaching</a></li>
+                    <li><a href="universita.html">Università Telematiche</a></li>
+                    <li><a href="italiano.html">Italiano per Stranieri</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contatti</h4>
+                <ul>
+                    <li><i class="ri-map-pin-line" style="color:var(--primary)"></i> Via Roma 10, Città</li>
+                    <li><i class="ri-mail-line" style="color:var(--primary)"></i> info@fabricamente.it</li>
+                    <li><i class="ri-phone-line" style="color:var(--primary)"></i> +39 012 345 6789</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 40px; border-top: 1px solid var(--border);">
+            <p>&copy; 2025 Fabricamente. Tutti i diritti riservati. - <a href="privacy.html" style="text-decoration: underline;">Privacy & Cookie Policy</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/layout.js"></script>
+</body>
+</html>
