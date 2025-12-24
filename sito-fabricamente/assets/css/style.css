@@ -726,3 +726,18 @@ footer {
         }
     }
 }
+
+#CookiebotWidget {
+
+    z-index: 2147483647 !important;
+
+    background-color: #ffffff !important;
+
+    border-radius: 50% !important;
+
+    margin: 10px !important;
+}
+
+#CookiebotWidget svg {
+    fill: #000000 !important;
+}
