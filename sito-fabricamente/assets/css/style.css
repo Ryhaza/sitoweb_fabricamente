@@ -727,17 +727,15 @@ footer {
     }
 }
 
-#CookiebotWidget {
-
-    z-index: 2147483647 !important;
-
-    background-color: #ffffff !important;
-
-    border-radius: 50% !important;
-
-    margin: 10px !important;
+#CookiebotWidget svg {
+    fill: #ffffff !important;
 }
 
-#CookiebotWidget svg {
-    fill: #000000 !important;
+#CookiebotWidget .CookiebotWidget-btn {
+    background-color: var(--primary) !important;
+    border-radius: 50% !important;
+}
+
+#CookiebotWidget {
+    z-index: 10000 !important; /* Sempre sopra a tutto */
 }
