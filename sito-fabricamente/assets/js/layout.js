@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
             <div style="text-align: center; padding-top: 40px; border-top: 1px solid var(--border);">
-                <p>&copy; 2024 Fabricamente. Tutti i diritti riservati. - <a href="carta-qualita.html" style="text-decoration: underline;">Carta Qualità</a></p>
+                <p>&copy; 2025 Fabricamente. Tutti i diritti riservati. - <a href="privacy.html" style="text-decoration: underline;">Privacy & Cookie Policy</a></p>
             </div>
         </div>
     </footer>
