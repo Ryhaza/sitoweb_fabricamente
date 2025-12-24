@@ -15,7 +15,32 @@
 <body>
 
 
-<div id="header-placeholder"></div>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="assets/img/logo_fabricamente.png" alt="Fabricamente Logo">
+    </a>
+
+    <div class="hamburger"><i class="ri-menu-3-line"></i></div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+
+        <li class="dropdown">
+            <a href="#">Servizi <i class="ri-arrow-down-s-line"></i></a>
+            <div class="dropdown-content">
+                <a href="formazione.html">Formazione e Consulenza</a>
+                <a href="coaching.html">Coaching</a>
+                <a href="universita.html">Orientamento Universitario</a>
+                <a href="italiano.html">Corsi Italiano Stranieri</a>
+            </div>
+        </li>
+
+        <li><a href="carta-qualita.html">Carta Qualità</a></li>
+        <li><a href="index.html#progetti">Progetti</a></li>
+        <li><a href="index.html#contatti" class="btn btn-primary" style="padding: 10px 20px;">Contattaci</a></li>
+    </ul>
+</nav>
 
 <header class="hero hero-home">
     <div class="hero-content">
@@ -130,7 +155,7 @@
 
             <div class="card">
                 <div>
-                    <div class="card-icon"><i class="ri-graduation-cap-line"></i></div>
+                    <div class="card-icon"><i class="ri-bank-line"></i></div>
                     <h3>Università Digitali</h3>
                     <p>Siamo il polo ufficiale di orientamento per UniPegaso, Mercatorum e San Raffaele. Ti guidiamo
                         dalla scelta del corso alla laurea, senza stress.</p>
@@ -280,7 +305,40 @@
     </div>
 </section>
 
-<div id="footer-placeholder"></div>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <img src="assets/img/logo_fabricamente.png" alt="Logo" style="height: 40px; opacity: 0.8;">
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    Formazione, consulenza e orientamento universitario. La tua crescita è la nostra missione.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Rapidi</h4>
+                <ul>
+                    <li><a href="formazione.html">Formazione Aziendale</a></li>
+                    <li><a href="coaching.html">Coaching</a></li>
+                    <li><a href="universita.html">Università Telematiche</a></li>
+                    <li><a href="italiano.html">Italiano per Stranieri</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contatti</h4>
+                <ul>
+                    <li><i class="ri-map-pin-line" style="color:var(--primary)"></i> Via Roma 10, Città</li>
+                    <li><i class="ri-mail-line" style="color:var(--primary)"></i> info@fabricamente.it</li>
+                    <li><i class="ri-phone-line" style="color:var(--primary)"></i> +39 012 345 6789</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 40px; border-top: 1px solid var(--border);">
+            <p>&copy; 2025 Fabricamente. Tutti i diritti riservati. - <a href="privacy.html" style="text-decoration: underline;">Privacy & Cookie Policy</a></p>
+        </div>
+    </div>
+</footer>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/layout.js"></script>
