@@ -631,6 +631,15 @@ footer {
     margin-bottom: 20px;
 }
 
+footer .logo {
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+footer .logo img {
+    z-index: auto !important;
+}
+
 /* =========================================
    8. PAGINA PROGETTI (Nuovi Stili)
    ========================================= */
@@ -979,19 +988,3 @@ footer {
         margin: 0 auto;
     }
 }
-
-#CookiebotWidget svg {
-    fill: #ffffff !important;
-}
-
-#CookiebotWidget .CookiebotWidget-btn {
-    background-color: var(--primary) !important;
-    border-radius: 50% !important;
-}
-
-#CookiebotWidget {
-    z-index: 10000 !important; /* Sempre sopra a tutto */
-}
-
-
-
