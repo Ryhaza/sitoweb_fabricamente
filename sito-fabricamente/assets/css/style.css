@@ -615,6 +615,18 @@ footer {
     border-top: 1px solid var(--border);
 }
 
+footer {
+    margin-top: -1px !important;
+    position: relative;
+    z-index: 5;
+    border-top: none !important;
+}
+
+#contatti, .cta-section {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -866,6 +878,49 @@ footer .logo img {
 .modal-content::-webkit-scrollbar { width: 8px; }
 .modal-content::-webkit-scrollbar-track { background: #1a1a1a; }
 .modal-content::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+/* STILE FOOTER BADGE QUALITÀ */
+.quality-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03); /* Sfondo quasi invisibile */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Bordo sottile elegante */
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    max-width: 280px;
+}
+
+.quality-badge:hover {
+    background: rgba(255, 107, 0, 0.1); /* Leggero arancione al passaggio */
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.quality-icon i {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.quality-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.quality-text span {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quality-text strong {
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 700;
+}
 
 @media(max-width: 768px) {
     .modal-header-img { height: 200px; }
