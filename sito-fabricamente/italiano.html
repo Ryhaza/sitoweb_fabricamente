@@ -1,112 +1,415 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d835c56b-14bd-4fa3-99dc-661a1ab3457e"
-            data-blockingmode="auto" type="text/javascript"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corsi Italiano | Fabricamente</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Italiano per Stranieri | Fabricamente</title>
+
+    <link rel="stylesheet" href="assets/css/style.css?v=18">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: var(--bg-dark);">
 
 <nav>
-    <a href="index.html" class="logo">
-        <img src="assets/img/logo_fabricamente.png" alt="Fabricamente Logo">
-    </a>
-
+    <a href="index.html" class="logo"><img src="assets/img/logo_fabricamente.png" alt="Fabricamente Logo"></a>
     <div class="hamburger"><i class="ri-menu-3-line"></i></div>
-
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="chi-siamo.html">Chi Siamo</a></li>
-
         <li class="dropdown">
-            <a href="#">Servizi <i class="ri-arrow-down-s-line"></i></a>
+            <a href="#">Aziende <i class="ri-arrow-down-s-line"></i></a>
             <div class="dropdown-content">
-                <a href="formazione.html">Formazione e Consulenza</a>
-                <a href="coaching.html">Coaching</a>
-                <a href="universita.html">Orientamento Universitario</a>
-                <a href="italiano.html">Corsi Italiano Stranieri</a>
+                <a href="formazione-aziendale.html">Formazione Aziendale</a>
             </div>
         </li>
-
-        <li><a href="carta-qualita.html">Carta Qualità</a></li>
+        <li class="dropdown">
+            <a href="business-coaching.html" class="active">Coaching <i class="ri-arrow-down-s-line"></i></a>
+            <div class="dropdown-content">
+                <a href="business-coaching.html">Business Coaching</a>
+                <a href="lifecareer.html">Life & Career</a>
+                <a href="italiano.html">Italiano per Stranieri</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="universita.html">Università <i class="ri-arrow-down-s-line"></i></a>
+            <div class="dropdown-content">
+                <a href="universita.html">Orientamento</a>
+                <a href="universita.html#pegaso">UniPegaso</a>
+                <a href="universita.html#mercatorum">Mercatorum</a>
+                <a href="universita.html#sanraffaele">San Raffaele</a>
+            </div>
+        </li>
         <li><a href="progetti.html">Progetti</a></li>
         <li><a href="index.html#contatti" class="btn btn-primary" style="padding: 10px 20px;">Contattaci</a></li>
     </ul>
 </nav>
 
-<header class="hero-page" style="padding-top: 120px; padding-bottom: 60px; min-height: auto;">
-    <h1>Italiano per <br><span>Stranieri</span></h1>
-    <p>Corsi intensivi di lingua italiana progettati per studio, lavoro e per l'ottenimento del visto studentesco.</p>
+<header class="hero-italiano">
+    <div class="container">
+
+        <div class="lang-toggle-container" style="flex-wrap: wrap;">
+            <div class="lang-toggle">
+                <span class="lang-btn active" onclick="setLanguage('it')">IT</span>
+                <span class="lang-btn" onclick="setLanguage('en')">EN</span>
+                <span class="lang-btn" onclick="setLanguage('de')">DE</span>
+                <span class="lang-btn" onclick="setLanguage('fr')">FR</span>
+                <span class="lang-btn" onclick="setLanguage('es')">ES</span>
+                <span class="lang-btn" onclick="setLanguage('ar')">AR</span>
+            </div>
+        </div>
+
+        <h4 class="translatable"
+            data-it="Italian Language & Culture" data-en="Italian Language & Culture" data-de="Italienische Sprache & Kultur" data-fr="Langue et Culture Italiennes" data-es="Lengua y Cultura Italiana" data-ar="اللغة والثقافة الإيطالية"
+            style="color:var(--primary); text-transform:uppercase; letter-spacing:4px; font-weight:700; margin-bottom:15px; font-size: 0.9rem;">
+            Italian Language & Culture
+        </h4>
+
+        <h1 class="translatable"
+            data-it="Non solo parole,<br><span style='color: var(--primary);'>ma Cultura</span>"
+            data-en="Not just words,<br><span style='color: var(--primary);'>but Culture</span>"
+            data-de="Nicht nur Worte,<br><span style='color: var(--primary);'>sondern Kultur</span>"
+            data-fr="Pas seulement des mots,<br><span style='color: var(--primary);'>mais de la Culture</span>"
+            data-es="No solo palabras,<br><span style='color: var(--primary);'>sino Cultura</span>"
+            data-ar="ليست مجرد كلمات،<br><span style='color: var(--primary);'>بل ثقافة</span>">
+            Non solo parole,<br><span style="color: var(--primary);">ma Cultura</span>
+        </h1>
+
+        <p class="hero-subtitle translatable"
+           data-it="Corsi di lingua italiana per manager, professionisti e studenti internazionali."
+           data-en="Italian language courses for managers, professionals, and international students."
+           data-de="Italienischkurse für Manager, Fachleute und internationale Studenten."
+           data-fr="Cours d'italien pour managers, professionnels et étudiants internationaux."
+           data-es="Cursos de italiano para gerentes, profesionales y estudiantes internacionales."
+           data-ar="دورات اللغة الإيطالية للمديرين والمهنيين والطلاب الدوليين.">
+            Corsi di lingua italiana per manager, professionisti e studenti internazionali.
+        </p>
+
+    </div>
 </header>
 
+<div class="hero-stats-wrapper">
+    <div class="container">
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ri-briefcase-4-line"></i></div>
+                <div class="stat-text">
+                    <h3 class="translatable" data-it="Business" data-en="Business" data-de="Business" data-fr="Affaires" data-es="Negocios" data-ar="أعمال">Business</h3>
+                    <p class="translatable"
+                       data-it="Linguaggio tecnico e commerciale per lavorare in Italia."
+                       data-en="Technical and commercial language for working in Italy."
+                       data-de="Technisches und kommerzielles Vokabular für die Arbeit in Italien."
+                       data-fr="Langage technique et commercial pour travailler en Italie."
+                       data-es="Lenguaje técnico y comercial para trabajar en Italia."
+                       data-ar="لغة تقنية وتجارية للعمل في إيطاليا.">
+                        Linguaggio tecnico e commerciale per lavorare in Italia.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ri-government-line"></i></div>
+                <div class="stat-text">
+                    <h3 class="translatable" data-it="Cittadinanza" data-en="Citizenship" data-de="Staatsbürgerschaft" data-fr="Citoyenneté" data-es="Ciudadanía" data-ar="الجنسية">Cittadinanza</h3>
+                    <p class="translatable"
+                       data-it="Preparazione ufficiale per gli esami B1 Cittadinanza."
+                       data-en="Official preparation for B1 Citizenship exams."
+                       data-de="Offizielle Vorbereitung auf die B1-Prüfungen."
+                       data-fr="Préparation officielle aux examens B1 Citoyenneté."
+                       data-es="Preparación oficial para los exámenes B1 de Ciudadanía."
+                       data-ar="التحضير الرسمي لاختبارات الجنسية B1.">
+                        Preparazione ufficiale per gli esami B1 Cittadinanza.
+                    </p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ri-chat-smile-2-line"></i></div>
+                <div class="stat-text">
+                    <h3 class="translatable" data-it="Integrazione" data-en="Integration" data-de="Integration" data-fr="Intégration" data-es="Integración" data-ar="اندماج">Integrazione</h3>
+                    <p class="translatable"
+                       data-it="Impara a vivere e comunicare la cultura italiana."
+                       data-en="Learn to live and communicate Italian culture."
+                       data-de="Lernen Sie, die italienische Kultur zu leben."
+                       data-fr="Apprenez à vivre et communiquer la culture italienne."
+                       data-es="Aprende a vivir y comunicar la cultura italiana."
+                       data-ar="تعلم العيش والتواصل مع الثقافة الإيطالية.">
+                        Impara a vivere e comunicare la cultura italiana.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <section class="page-section">
-    <div class="container" style="max-width: 900px;">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2>Dettagli del Corso</h2>
-            <p>Il nostro programma è strutturato per garantire un apprendimento rapido e certificabile, conforme alle
-                normative per i visti studio.</p>
-        </div>
+    <div class="container zigzag-container">
 
-        <div class="card card-internal">
-            <h3 style="color:var(--primary); margin-bottom: 20px;">Specifiche Tecniche</h3>
-            <ul class="spec-list">
-                <li>
-                    <i class="ri-time-line"></i>
-                    <div>
-                        <strong>Monte Ore Totale</strong>
-                        <p style="font-size: 0.9rem; margin-bottom: 0;">480 ore di formazione intensiva in presenza.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="ri-calendar-event-line"></i>
-                    <div>
-                        <strong>Frequenza</strong>
-                        <p style="font-size: 0.9rem; margin-bottom: 0;">20 ore settimanali, dal lunedì al venerdì.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="ri-user-star-line"></i>
-                    <div>
-                        <strong>Docenti</strong>
-                        <p style="font-size: 0.9rem; margin-bottom: 0;">Insegnanti madrelingua qualificati nella
-                            didattica L2.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="ri-speak-line"></i>
-                    <div>
-                        <strong>Metodologia</strong>
-                        <p style="font-size: 0.9rem; margin-bottom: 0;">Approccio interattivo: ascolto, parlato, lettura
-                            e scrittura.</p>
-                    </div>
-                </li>
-            </ul>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="#" class="btn-cta">Richiedi Iscrizione</a>
+        <div class="zigzag-row">
+            <div class="zigzag-text">
+                <h3 class="translatable"
+                    data-it="Business <br><span style='color:var(--primary)'>Italian</span>"
+                    data-en="Business <br><span style='color:var(--primary)'>Italian</span>"
+                    data-de="Wirtschafts <br><span style='color:var(--primary)'>italienisch</span>"
+                    data-fr="Italien des <br><span style='color:var(--primary)'>Affaires</span>"
+                    data-es="Italiano de <br><span style='color:var(--primary)'>Negocios</span>"
+                    data-ar="الإيطالية للأعمال <br><span style='color:var(--primary)'>التجارية</span>">
+                    Business <br><span style="color:var(--primary)">Italian</span>
+                </h3>
+
+                <p class="translatable"
+                   data-it="Progettato per expat, manager e aziende internazionali. Ci concentriamo sul lessico professionale, sulla scrittura di email formali e sulla comprensione delle dinamiche lavorative."
+                   data-en="Designed for expats, managers, and international companies. We focus on professional vocabulary, formal email writing, and understanding workplace dynamics."
+                   data-de="Konzipiert für Expats, Manager und internationale Unternehmen. Wir konzentrieren uns auf Fachvokabular, formelle E-Mails und Arbeitsdynamik."
+                   data-fr="Conçu pour les expatriés, managers et entreprises internationales. Focus sur le vocabulaire professionnel, les e-mails formels et la dynamique de travail."
+                   data-es="Diseñado para expatriados, gerentes y empresas internacionales. Nos enfocamos en vocabulario profesional, correos formales y dinámicas laborales."
+                   data-ar="مصممة للمغتربين والمديرين والشركات الدولية. نركز على المفردات المهنية وكتابة الرسائل الرسمية وفهم ديناميكيات العمل.">
+                    Progettato per expat, manager e aziende internazionali. Ci concentriamo sul lessico professionale, sulla scrittura di email formali e sulla comprensione delle dinamiche lavorative.
+                </p>
+
+                <ul class="zigzag-list">
+                    <li class="translatable"
+                        data-it="<i class='ri-check-line'></i> Lessico settoriale (Legale, Finance, HR)"
+                        data-en="<i class='ri-check-line'></i> Sector vocabulary (Legal, Finance, HR)"
+                        data-de="<i class='ri-check-line'></i> Fachvokabular (Recht, Finanzen, HR)"
+                        data-fr="<i class='ri-check-line'></i> Vocabulaire sectoriel (Juridique, Finance, RH)"
+                        data-es="<i class='ri-check-line'></i> Vocabulario sectorial (Legal, Finanzas, RRHH)"
+                        data-ar="<i class='ri-check-line'></i> مفردات القطاع (القانوني، المالي، الموارد البشرية)">
+                        <i class="ri-check-line"></i> Lessico settoriale (Legale, Finance, HR)
+                    </li>
+                    <li class="translatable"
+                        data-it="<i class='ri-check-line'></i> Public Speaking in italiano"
+                        data-en="<i class='ri-check-line'></i> Public Speaking in Italian"
+                        data-de="<i class='ri-check-line'></i> Öffentliches Reden auf Italienisch"
+                        data-fr="<i class='ri-check-line'></i> Prise de parole en public en italien"
+                        data-es="<i class='ri-check-line'></i> Hablar en público en italiano"
+                        data-ar="<i class='ri-check-line'></i> التحدث أمام الجمهور بالإيطالية">
+                        <i class="ri-check-line"></i> Public Speaking in italiano
+                    </li>
+                </ul>
+            </div>
+            <div class="zigzag-img">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" alt="Business Italian">
             </div>
         </div>
 
-        <div style="margin-top: 80px; text-align: center;">
-            <h3>A chi è rivolto?</h3>
-            <div class="grid-2" style="margin-top: 40px; align-items: stretch;">
-                <div class="card card-internal" style="text-align: center;">
-                    <i class="ri-passport-line" style="margin: 0 auto 20px;"></i>
-                    <h4>Studenti Internazionali</h4>
-                    <p style="font-size: 0.9rem;">Necessari per l'ottenimento del Visto Studio per l'Italia.</p>
-                </div>
-                <div class="card card-internal" style="text-align: center;">
-                    <i class="ri-briefcase-2-line" style="margin: 0 auto 20px;"></i>
-                    <h4>Lavoratori Stranieri</h4>
-                    <p style="font-size: 0.9rem;">Per chi vuole integrarsi professionalmente nel mercato italiano.</p>
+        <div class="zigzag-row reverse">
+            <div class="zigzag-text">
+                <h3 class="translatable"
+                    data-it="General Italian <br><span style='color:var(--primary)'>& Culture</span>"
+                    data-en="General Italian <br><span style='color:var(--primary)'>& Culture</span>"
+                    data-de="Allgemeines Italienisch <br><span style='color:var(--primary)'>& Kultur</span>"
+                    data-fr="Italien Général <br><span style='color:var(--primary)'>& Culture</span>"
+                    data-es="Italiano General <br><span style='color:var(--primary)'>y Cultura</span>"
+                    data-ar="اللغة الإيطالية العامة <br><span style='color:var(--primary)'>والثقافة</span>">
+                    General Italian <br><span style="color:var(--primary)">& Culture</span>
+                </h3>
+
+                <p class="translatable"
+                   data-it="Imparare una lingua significa immergersi in una cultura. I nostri corsi combinano grammatica e conversazione con focus su arte, cinema, cucina e attualità."
+                   data-en="Learning a language means immersing yourself in a culture. Our courses combine grammar and conversation with a focus on art, cinema, cuisine, and current events."
+                   data-de="Eine Sprache zu lernen bedeutet, in eine Kultur einzutauchen. Unsere Kurse verbinden Grammatik und Konversation mit Fokus auf Kunst, Kino, Küche und Aktuelles."
+                   data-fr="Apprendre une langue, c'est s'immerger dans une culture. Nos cours allient grammaire et conversation avec un focus sur l'art, le cinéma, la cuisine et l'actualité."
+                   data-es="Aprender un idioma significa sumergirse en una cultura. Nuestros cursos combinan gramática y conversación con enfoque en arte, cine, cocina y actualidad."
+                   data-ar="تعلم لغة يعني الانغماس في ثقافة. تجمع دوراتنا بين القواعد والمحادثة مع التركيز على الفن والسينما والمطبخ والأحداث الجارية.">
+                    Imparare una lingua significa immergersi in una cultura. I nostri corsi combinano grammatica e conversazione con focus su arte, cinema, cucina e attualità.
+                </p>
+
+                <ul class="zigzag-list">
+                    <li class="translatable"
+                        data-it="<i class='ri-check-line'></i> Conversazione e pronuncia"
+                        data-en="<i class='ri-check-line'></i> Conversation and pronunciation"
+                        data-de="<i class='ri-check-line'></i> Konversation und Aussprache"
+                        data-fr="<i class='ri-check-line'></i> Conversation et prononciation"
+                        data-es="<i class='ri-check-line'></i> Conversación y pronunciación"
+                        data-ar="<i class='ri-check-line'></i> المحادثة والنطق">
+                        <i class="ri-check-line"></i> Conversazione e pronuncia
+                    </li>
+                    <li class="translatable"
+                        data-it="<i class='ri-check-line'></i> Situazioni di vita quotidiana"
+                        data-en="<i class='ri-check-line'></i> Daily life situations"
+                        data-de="<i class='ri-check-line'></i> Situationen des täglichen Lebens"
+                        data-fr="<i class='ri-check-line'></i> Situations de la vie quotidienne"
+                        data-es="<i class='ri-check-line'></i> Situaciones de la vida diaria"
+                        data-ar="<i class='ri-check-line'></i> مواقف الحياة اليومية">
+                        <i class="ri-check-line"></i> Situazioni di vita quotidiana
+                    </li>
+                </ul>
+            </div>
+            <div class="zigzag-img">
+                <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Italian Culture">
+            </div>
+        </div>
+
+        <div class="zigzag-row">
+            <div class="zigzag-text">
+                <h3 class="translatable"
+                    data-it="Esami e <br><span style='color:var(--primary)'>Certificazioni</span>"
+                    data-en="Exams and <br><span style='color:var(--primary)'>Certifications</span>"
+                    data-de="Prüfungen und <br><span style='color:var(--primary)'>Zertifikate</span>"
+                    data-fr="Examens et <br><span style='color:var(--primary)'>Certifications</span>"
+                    data-es="Exámenes y <br><span style='color:var(--primary)'>Certificaciones</span>"
+                    data-ar="الامتحانات و <br><span style='color:var(--primary)'>الشهادات</span>">
+                    Esami e <br><span style="color:var(--primary)">Certificazioni</span>
+                </h3>
+
+                <p class="translatable"
+                   data-it="Ti prepariamo per ottenere le certificazioni ufficiali (CILS, CELI, PLIDA) riconosciute a livello internazionale, necessarie per visti o cittadinanza."
+                   data-en="We prepare you to obtain official international certifications (CILS, CELI, PLIDA), required for visas or citizenship."
+                   data-de="Wir bereiten Sie auf offizielle internationale Zertifikate (CILS, CELI, PLIDA) vor, die für Visa oder die Staatsbürgerschaft erforderlich sind."
+                   data-fr="Nous vous préparons aux certifications officielles (CILS, CELI, PLIDA) reconnues internationalement, nécessaires pour les visas ou la citoyenneté."
+                   data-es="Te preparamos para obtener certificaciones oficiales (CILS, CELI, PLIDA), necesarias para visas o ciudadanía."
+                   data-ar="نقوم بإعدادك للحصول على الشهادات الدولية الرسمية (CILS, CELI, PLIDA)، المطلوبة للتأشيرات أو الجنسية.">
+                    Ti prepariamo per ottenere le certificazioni ufficiali (CILS, CELI, PLIDA) riconosciute a livello internazionale, necessarie per visti o cittadinanza.
+                </p>
+
+                <ul class="zigzag-list">
+                    <li class="translatable"
+                        data-it="<i class='ri-check-line'></i> Simulazioni d'esame ufficiali"
+                        data-en="<i class='ri-check-line'></i> Official exam simulations"
+                        data-de="<i class='ri-check-line'></i> Offizielle Prüfungssimulationen"
+                        data-fr="<i class='ri-check-line'></i> Simulations d'examens officiels"
+                        data-es="<i class='ri-check-line'></i> Simulaciones de examen oficiales"
+                        data-ar="<i class='ri-check-line'></i> محاكاة الامتحانات الرسمية">
+                        <i class="ri-check-line"></i> Simulazioni d'esame ufficiali
+                    </li>
+                    <li class="translatable"
+                        data-it="<i class='ri-check-line'></i> Preparazione B1 Cittadinanza"
+                        data-en="<i class='ri-check-line'></i> B1 Citizenship Preparation"
+                        data-de="<i class='ri-check-line'></i> B1 Vorbereitung Staatsbürgerschaft"
+                        data-fr="<i class='ri-check-line'></i> Préparation B1 Citoyenneté"
+                        data-es="<i class='ri-check-line'></i> Preparación B1 Ciudadanía"
+                        data-ar="<i class='ri-check-line'></i> التحضير لاختبار B1 للجنسية">
+                        <i class="ri-check-line"></i> Preparazione B1 Cittadinanza
+                    </li>
+                </ul>
+            </div>
+            <div class="zigzag-img">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" alt="Certificazioni Italiano">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="method-pro-section">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="translatable"
+                data-it="Come <span style='color:var(--primary)'>Funziona</span>"
+                data-en="How it <span style='color:var(--primary)'>Works</span>"
+                data-de="Wie es <span style='color:var(--primary)'>funktioniert</span>"
+                data-fr="Comment ça <span style='color:var(--primary)'>Marche</span>"
+                data-es="Cómo <span style='color:var(--primary)'>Funciona</span>"
+                data-ar="كيف <span style='color:var(--primary)'>يعمل</span>"
+                style="color:white; font-size: 2.5rem;">
+                Come <span style="color:var(--primary)">Funziona</span>
+            </h2>
+            <p class="translatable"
+               data-it="Un approccio comunicativo per parlare fin da subito."
+               data-en="A communicative approach to start speaking immediately."
+               data-de="Ein kommunikativer Ansatz, um sofort zu sprechen."
+               data-fr="Une approche communicative pour parler immédiatement."
+               data-es="Un enfoque comunicativo para hablar desde el principio."
+               data-ar="نهج تواصلي للبدء في التحدث على الفور."
+               style="color:#888; margin-top: 10px;">
+                Un approccio comunicativo per parlare fin da subito.
+            </p>
+        </div>
+
+        <div class="method-pro-grid">
+            <div class="process-card">
+                <span class="big-number">01</span>
+                <div class="process-content">
+                    <i class="ri-file-list-3-line process-icon"></i>
+                    <h4 class="translatable" data-it="Assessment Test" data-en="Assessment Test" data-de="Einstufungstest" data-fr="Test d'évaluation" data-es="Prueba de Nivel" data-ar="اختبار التقييم" class="process-title">Assessment Test</h4>
+                    <p class="translatable"
+                       data-it="Valutiamo il tuo livello di partenza secondo il quadro comune europeo (QCER)."
+                       data-en="We evaluate your starting level according to the Common European Framework (CEFR)."
+                       data-de="Wir bewerten Ihr Ausgangsniveau nach dem Gemeinsamen Europäischen Referenzrahmen (GER)."
+                       data-fr="Nous évaluons votre niveau de départ selon le cadre européen commun (CECRL)."
+                       data-es="Evaluamos tu nivel inicial según el marco común europeo (MCER)."
+                       data-ar="نقوم بتقييم مستوى بدايتك وفقًا للإطار الأوروبي المشترك (CEFR)."
+                       class="process-desc">
+                        Valutiamo il tuo livello di partenza secondo il quadro comune europeo (QCER).
+                    </p>
                 </div>
             </div>
+            <div class="process-card">
+                <span class="big-number">02</span>
+                <div class="process-content">
+                    <i class="ri-group-line process-icon"></i>
+                    <h4 class="translatable" data-it="Lezioni Interattive" data-en="Interactive Lessons" data-de="Interaktive Lektionen" data-fr="Leçons Interactives" data-es="Lecciones Interactivas" data-ar="دروس تفاعلية" class="process-title">Lezioni Interattive</h4>
+                    <p class="translatable"
+                       data-it="Lezioni basate sulla pratica. Meno regole a memoria, più situazioni reali di comunicazione."
+                       data-en="Practice-based lessons. Fewer rules by heart, more real communication situations."
+                       data-de="Praxisorientierter Unterricht. Weniger Auswendiglernen, mehr reale Situationen."
+                       data-fr="Leçons basées sur la pratique. Moins de règles par cœur, plus de situations réelles."
+                       data-es="Lecciones prácticas. Menos reglas de memoria, más situaciones reales."
+                       data-ar="دروس قائمة على الممارسة. قواعد أقل للحفظ، ومزيد من مواقف التواصل الحقيقية."
+                       class="process-desc">
+                        Lezioni basate sulla pratica. Meno regole a memoria, più situazioni reali di comunicazione.
+                    </p>
+                </div>
+            </div>
+            <div class="process-card">
+                <span class="big-number">03</span>
+                <div class="process-content">
+                    <i class="ri-award-line process-icon"></i>
+                    <h4 class="translatable" data-it="Obiettivo Raggiunto" data-en="Goal Achieved" data-de="Ziel Erreicht" data-fr="Objectif Atteint" data-es="Objetivo Logrado" data-ar="تم تحقيق الهدف" class="process-title">Obiettivo Raggiunto</h4>
+                    <p class="translatable"
+                       data-it="Che sia migliorare il tuo business o ottenere il passaporto, ti accompagniamo al traguardo."
+                       data-en="Whether improving your business or getting a passport, we guide you to the finish line."
+                       data-de="Ob Geschäftsverbesserung oder Reisepass, wir begleiten Sie ans Ziel."
+                       data-fr="Qu'il s'agisse d'améliorer votre business ou d'obtenir un passeport, nous vous accompagnons."
+                       data-es="Ya sea mejorar tu negocio u obtener el pasaporte, te acompañamos a la meta."
+                       data-ar="سواء كان الأمر يتعلق بتحسين عملك أو الحصول على جواز سفر، نرافقك حتى خط النهاية."
+                       class="process-desc">
+                        Che sia migliorare il tuo business o ottenere il passaporto, ti accompagniamo al traguardo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section" style="margin-top: 50px;">
+    <div class="container">
+        <div class="cta-box" style="background: linear-gradient(135deg, var(--primary), #ff6b00); padding: 50px; border-radius: 15px; text-align: center; box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2);">
+            <h2 class="translatable"
+                data-it="Impara l'Italiano con noi"
+                data-en="Learn Italian with us"
+                data-de="Lernen Sie Italienisch mit uns"
+                data-fr="Apprenez l'Italien avec nous"
+                data-es="Aprende Italiano con nosotros"
+                data-ar="تعلم الإيطالية معنا"
+                style="color:white; margin-bottom: 20px; font-size: 2rem;">
+                Impara l'Italiano con noi
+            </h2>
+            <p class="translatable"
+               data-it="Contattaci per un test di livello gratuito e per scoprire i prossimi corsi in partenza."
+               data-en="Contact us for a free level test and to discover upcoming courses."
+               data-de="Kontaktieren Sie uns für einen kostenlosen Einstufungstest und kommende Kurse."
+               data-fr="Contactez-nous pour un test de niveau gratuit et découvrir les prochains cours."
+               data-es="Contáctanos para una prueba de nivel gratuita y ver los próximos cursos."
+               data-ar="اتصل بنا لإجراء اختبار مستوى مجاني واكتشاف الدورات القادمة."
+               style="color:white; font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95;">
+                Contattaci per un test di livello gratuito e per scoprire i prossimi corsi in partenza.
+            </p>
+            <a href="index.html#contatti" class="translatable btn"
+               data-it="RICHIEDI INFO"
+               data-en="REQUEST INFO"
+               data-de="INFO ANFORDERN"
+               data-fr="DEMANDER DES INFOS"
+               data-es="SOLICITAR INFO"
+               data-ar="طلب معلومات"
+               style="background: white; color: var(--primary); font-weight: 800; padding: 15px 40px; border-radius: 50px;">
+                RICHIEDI INFO
+            </a>
         </div>
     </div>
 </section>
@@ -114,17 +417,10 @@
 <footer>
     <div class="container">
         <div class="footer-grid">
-
             <div class="footer-col">
-                <div class="logo" style="margin-bottom: 20px;">
-                    <img src="assets/img/logo_fabricamente.png" alt="Logo" style="height: 40px; opacity: 0.9;">
-                </div>
-
+                <div class="logo" style="margin-bottom: 20px;"><img src="assets/img/logo_fabricamente.png" alt="Logo" style="height: 40px; opacity: 0.9;"></div>
                 <div style="margin-bottom: 20px;">
-                    <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; color: #ccc;">
-                        Società di consulenza e formazione.<br>La tua crescita è la nostra missione.
-                    </p>
-
+                    <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; color: #ccc;">Società di consulenza e formazione.<br>La tua crescita è la nostra missione.</p>
                     <div style="border-left: 3px solid var(--primary); padding-left: 15px; margin-top: 20px;">
                         <h5 style="color: white; margin-bottom: 10px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">Polo di Orientamento:</h5>
                         <ul style="font-size: 0.9rem; color: #b0b0b0; list-style: none; padding: 0;">
@@ -135,63 +431,31 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer-col">
                 <h4 style="color: white; margin-bottom: 25px;">Sede & Contatti</h4>
                 <ul style="font-size: 0.9rem; line-height: 1.8; color: #b0b0b0;">
-                    <li style="margin-bottom: 15px;">
-                        <strong style="color:white; display:block; margin-bottom:3px;">Sede legale e operativa:</strong>
-                        Via Fermo 2/a – 00182 Roma
-                    </li>
-                    <li style="margin-bottom: 15px;">
-                        <strong style="color:white;">P.IVA:</strong> 16062481003
-                    </li>
-                    <li>
-                        <i class="ri-phone-line" style="color:var(--primary); margin-right: 8px;"></i>
-                        <a href="tel:+393291091250" style="color: #ccc;">+39 329 109 1250</a>
-                    </li>
-                    <li>
-                        <i class="ri-printer-line" style="color:var(--primary); margin-right: 8px;"></i>
-                        +39 06 99367465 (Fax)
-                    </li>
-                    <li>
-                        <i class="ri-mail-line" style="color:var(--primary); margin-right: 8px;"></i>
-                        <a href="mailto:info@fabricamente.it" style="color: #ccc;">info@fabricamente.it</a>
-                    </li>
+                    <li style="margin-bottom: 15px;"><strong style="color:white; display:block; margin-bottom:3px;">Sede legale e operativa:</strong> Via Fermo 2/a – 00182 Roma</li>
+                    <li style="margin-bottom: 15px;"><strong style="color:white;">P.IVA:</strong> 16062481003</li>
+                    <li><i class="ri-phone-line" style="color:var(--primary); margin-right: 8px;"></i> <a href="tel:+393291091250" style="color: #ccc;">+39 329 109 1250</a></li>
+                    <li><i class="ri-printer-line" style="color:var(--primary); margin-right: 8px;"></i> +39 06 99367465 (Fax)</li>
+                    <li><i class="ri-mail-line" style="color:var(--primary); margin-right: 8px;"></i> <a href="mailto:info@fabricamente.it" style="color: #ccc;">info@fabricamente.it</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
-
                 <div style="margin-bottom: 35px;">
                     <a href="carta-qualita.html" class="quality-badge">
-                        <div class="quality-icon">
-                            <i class="ri-shield-check-line"></i>
-                        </div>
-                        <div class="quality-text">
-                            <span>Documentazione Ufficiale</span>
-                            <strong>SCARICA CARTA QUALITÀ</strong>
-                        </div>
+                        <div class="quality-icon"><i class="ri-shield-check-line"></i></div>
+                        <div class="quality-text"><span>Documentazione Ufficiale</span><strong>SCARICA CARTA QUALITÀ</strong></div>
                     </a>
                 </div>
-
                 <h4 style="color: white; margin-bottom: 25px;">Seguici</h4>
-                <p style="font-size: 0.9rem; margin-bottom: 20px; color: #ccc;">Resta aggiornato su corsi, eventi e novità istituzionali.</p>
-
                 <div class="social-links" style="display: flex; gap: 15px;">
-                    <a href="https://www.linkedin.com/company/fabricamente/" target="_blank" class="social-icon">
-                        <i class="ri-linkedin-fill"></i>
-                    </a>
-                    <a href="https://www.facebook.com/Fabricamente" target="_blank" class="social-icon">
-                        <i class="ri-facebook-fill"></i>
-                    </a>
-                    <a href="https://www.instagram.com/fabricamente.ig" target="_blank" class="social-icon">
-                        <i class="ri-instagram-line"></i>
-                    </a>
+                    <a href="https://www.linkedin.com/company/fabricamente/" target="_blank" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.facebook.com/Fabricamente" target="_blank" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.instagram.com/fabricamente.ig" target="_blank" class="social-icon"><i class="ri-instagram-line"></i></a>
                 </div>
             </div>
         </div>
-
         <div style="text-align: center; padding-top: 40px; border-top: 1px solid var(--border); margin-top: 40px;">
             <p style="font-size: 0.85rem; color: #666;">&copy; 2025 Fabricamente S.r.l. Tutti i diritti riservati. - <a href="privacy.html" style="text-decoration: underline; color: #888;">Privacy & Cookie Policy</a></p>
         </div>
@@ -199,6 +463,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/layout.js"></script>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="TUO-ID-COOKIEBOT" data-blockingmode="auto" type="text/javascript"></script>
+
 </body>
 </html>

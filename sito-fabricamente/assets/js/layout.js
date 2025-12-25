@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- 5. EVIDENZIA PAGINA CORRENTE ---
-    const currentPage = window.location.pathname.split("/").pop(); // es. 'coaching.html'
+    const currentPage = window.location.pathname.split("/").pop(); // es. 'business-coaching.html'
     const menuLinks = document.querySelectorAll('.nav-links a');
 
     menuLinks.forEach(link => {

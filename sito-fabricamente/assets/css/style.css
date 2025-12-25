@@ -13,6 +13,7 @@
     --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.08);
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --font-main: 'Montserrat', sans-serif;
 }
 
 * {
@@ -27,7 +28,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-main);
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.7;
@@ -145,28 +146,24 @@ nav {
     border-bottom: 1px solid var(--border);
 }
 
-/* --- Aggiornamento CSS per Logo Immagine --- */
-
 .logo {
     display: flex;
     align-items: center;
     z-index: 10001;
     position: relative;
-    /* Rimuoviamo font-weight e font-size perché ora è un'immagine */
 }
 
 .logo img {
-    height: 50px; /* Regola questo valore in base all'altezza della tua navbar */
-    width: auto; /* Mantiene le proporzioni originali */
+    height: 50px;
+    width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .logo:hover img {
-    transform: scale(1.05); /* Un leggero effetto zoom quando ci passi sopra */
+    transform: scale(1.05);
 }
 
-/* Rimuoviamo lo stile della vecchia icona se presente */
 .logo i {
     display: none;
 }
@@ -191,14 +188,13 @@ nav {
     padding: 10px 0;
 }
 
-/* Padding aumenta l'area cliccabile */
 .nav-links a {
     font-weight: 500;
     font-size: 0.95rem;
     opacity: 0.8;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     opacity: 1;
     color: var(--primary);
 }
@@ -207,7 +203,7 @@ nav {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Si attacca esattamente sotto */
+    top: 100%;
     left: -20px;
     background-color: var(--bg-card);
     min-width: 240px;
@@ -218,7 +214,6 @@ nav {
     z-index: 10000;
 }
 
-/* Freccetta o spaziatura per evitare buchi nel mouse hover */
 .dropdown-content::before {
     content: '';
     position: absolute;
@@ -229,7 +224,6 @@ nav {
     background: transparent;
 }
 
-/* Mostra menu al passaggio del mouse su desktop */
 @media (min-width: 901px) {
     .dropdown:hover .dropdown-content {
         display: block;
@@ -252,18 +246,12 @@ nav {
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================
-   4. HERO SECTIONS
+   4. HERO SECTIONS (Originali)
    ========================================= */
 .hero {
     height: 100vh;
@@ -286,6 +274,7 @@ nav {
     height: auto;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .hero-content {
@@ -378,7 +367,6 @@ nav {
     background: var(--glass);
     border: 1px solid var(--border);
     transition: var(--transition);
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -420,7 +408,6 @@ nav {
 /* =========================================
    6. PAGE SPECIFIC & FORMS
    ========================================= */
-/* Feature Lists */
 .feature-list li, .spec-list li {
     margin-bottom: 20px;
     display: flex;
@@ -491,7 +478,7 @@ nav {
     opacity: 1;
 }
 
-/* Contact Form - RESTORED */
+/* Contact Form */
 .cta-section {
     background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;
     position: relative;
@@ -538,7 +525,7 @@ nav {
     border: 1px solid var(--border);
     border-radius: 8px;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-main);
     font-size: 1rem;
     transition: var(--transition);
 }
@@ -653,10 +640,197 @@ footer .logo img {
 }
 
 /* =========================================
-   8. PAGINA PROGETTI (Nuovi Stili)
+   12. NUOVO DESIGN: FLOAT CARDS & METODO PRO
    ========================================= */
 
-/* Griglia e Layout */
+/* --- 1. HIGHLIGHTS FLOTTANTI (Al posto della barra arancione) --- */
+.hero-stats-wrapper {
+    position: relative;
+    z-index: 20;
+    margin-top: -80px; /* Le tiriamo su per sovrapporle alla foto */
+    padding-bottom: 60px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    background: rgba(30, 30, 30, 0.85); /* Scuro semi-trasparente */
+    backdrop-filter: blur(10px); /* Effetto vetro sfocato */
+    padding: 30px 25px;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--primary); /* L'arancione è solo un accento elegante sotto */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(40, 40, 40, 0.95);
+}
+
+.stat-icon {
+    font-size: 2.2rem;
+    color: var(--primary);
+    background: rgba(255, 107, 0, 0.1);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-text h3 {
+    color: white; font-size: 1.1rem; margin: 0 0 5px 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.stat-text p {
+    color: #bbb; font-size: 0.85rem; margin: 0; line-height: 1.4;
+}
+
+
+/* --- 2. METODO "BIG NUMBERS" (Design Stiloso) --- */
+.method-pro-section {
+    padding: 100px 0;
+    background: #131313;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Linea sottile che collega i box (opzionale, per dare idea di percorso) */
+.method-pro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+}
+
+.process-card {
+    background: #1e1e1e;
+    padding: 40px 30px;
+    border-radius: 16px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden; /* Fondamentale per il numero gigante tagliato */
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.process-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Il Numero Gigante di Sfondo */
+.big-number {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03); /* Quasi invisibile ma c'è */
+    line-height: 1;
+    z-index: 0;
+    transition: color 0.3s;
+}
+
+.process-card:hover .big-number {
+    color: rgba(255, 107, 0, 0.1); /* Diventa arancione chiarissimo all'hover */
+}
+
+/* Contenuto sopra il numero */
+.process-content {
+    position: relative;
+    z-index: 1;
+}
+
+.process-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.process-title {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.process-desc {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .hero-stats-wrapper { margin-top: -40px; padding-left: 20px; padding-right: 20px; }
+
+    .method-pro-grid { grid-template-columns: 1fr; gap: 30px; }
+    .process-card { text-align: center; }
+    .big-number { right: 50%; transform: translateX(50%); top: 10px; font-size: 6rem; opacity: 0.5; }
+}
+
+/* =========================================
+   13. HERO SPECIFICHE (Business Coaching)
+   ========================================= */
+
+.hero-coaching {
+    /* Immagine: Un manager o un leader in un ufficio moderno, tono scuro */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0 100px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-coaching h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.1;
+}
+
+/* =========================================
+   14. HERO SPECIFICHE (Life & Career)
+   ========================================= */
+
+.hero-lifecareer {
+    /* Immagine: Orizzonte, libertà, luce calda, persona che guarda avanti */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0 100px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-lifecareer h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.1;
+}
+
+/* =========================================
+   8. PAGINA PROGETTI (Stili e Modali)
+   ========================================= */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -664,7 +838,6 @@ footer .logo img {
     margin-top: 40px;
 }
 
-/* Card Progetto */
 .project-card {
     background: var(--bg-card);
     border-radius: 16px;
@@ -675,13 +848,8 @@ footer .logo img {
     position: relative;
 }
 
-.project-card.hidden {
-    display: none;
-}
-
-.project-card.fade-in {
-    animation: fadeIn 0.5s ease forwards;
-}
+.project-card.hidden { display: none; }
+.project-card.fade-in { animation: fadeIn 0.5s ease forwards; }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -694,7 +862,6 @@ footer .logo img {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Immagine Card */
 .project-thumb {
     height: 250px;
     width: 100%;
@@ -736,191 +903,84 @@ footer .logo img {
     opacity: 1;
 }
 
-/* Info Card */
-.project-info {
-    padding: 25px;
-}
-
+.project-info { padding: 25px; }
 .project-cat {
-    color: var(--primary);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
+    color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 10px; display: block;
 }
-
 .project-title {
-    color: white;
-    font-size: 1.25rem;
-    margin: 0;
-    line-height: 1.4;
+    color: white; font-size: 1.25rem; margin: 0; line-height: 1.4;
 }
 
-/* Bottoni Filtri */
 .filter-btn {
-    background: transparent;
-    border: 1px solid #333;
-    color: #888;
-    padding: 8px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    background: transparent; border: 1px solid #333; color: #888;
+    padding: 8px 25px; border-radius: 50px; cursor: pointer;
+    font-family: var(--font-main); font-weight: 600; transition: all 0.3s ease;
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
+    background: var(--primary); color: white; border-color: var(--primary);
 }
 
-/* Finestra Modale (Popup) */
+/* Modale */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 20000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    padding: 20px;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
+    z-index: 20000; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 20px;
 }
-
-.modal.active {
-    opacity: 1;
-    pointer-events: all;
-}
+.modal.active { opacity: 1; pointer-events: all; }
 
 .modal-content {
-    background: #1a1a1a;
-    width: 100%;
-    max-width: 900px;
-    max-height: 90vh;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    overflow-y: auto;
-    position: relative;
-    transform: translateY(30px);
+    background: #1a1a1a; width: 100%; max-width: 900px; max-height: 90vh;
+    border-radius: 20px; border: 1px solid var(--border); overflow-y: auto;
+    position: relative; transform: translateY(30px);
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
+.modal.active .modal-content { transform: translateY(0); }
 
-.modal.active .modal-content {
-    transform: translateY(0);
-}
-
-.modal-header-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-}
-
-.modal-body {
-    padding: 40px;
-}
+.modal-header-img { width: 100%; height: 350px; object-fit: cover; }
+.modal-body { padding: 40px; }
 
 .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 1.5rem;
-    border: none;
-    z-index: 10;
+    position: absolute; top: 20px; right: 20px; width: 40px; height: 40px;
+    background: rgba(0,0,0,0.5); border-radius: 50%; color: white;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background 0.3s; font-size: 1.5rem;
+    border: none; z-index: 10;
 }
+.close-modal:hover { background: var(--primary); }
 
-.close-modal:hover {
-    background: var(--primary);
-}
-
-/* STILE ICONE SOCIAL FOOTER */
-.social-icon {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.social-icon:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
-}
-
-/* Scrollbar Modale */
 .modal-content::-webkit-scrollbar { width: 8px; }
 .modal-content::-webkit-scrollbar-track { background: #1a1a1a; }
 .modal-content::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 
-/* STILE FOOTER BADGE QUALITÀ */
+/* Social Icons & Badge Footer */
+.social-icon {
+    width: 45px; height: 45px; background: rgba(255, 255, 255, 0.1);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: white; font-size: 1.2rem;
+    transition: all 0.3s ease; border: 1px solid transparent;
+}
+.social-icon:hover {
+    background: var(--primary); color: white; transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+}
+
 .quality-badge {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.03); /* Sfondo quasi invisibile */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Bordo sottile elegante */
-    padding: 12px 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    max-width: 280px;
+    display: flex; align-items: center; gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 15px; border-radius: 8px; transition: all 0.3s ease;
+    text-decoration: none; max-width: 280px;
 }
-
 .quality-badge:hover {
-    background: rgba(255, 107, 0, 0.1); /* Leggero arancione al passaggio */
-    border-color: var(--primary);
-    transform: translateY(-2px);
+    background: rgba(255, 107, 0, 0.1); border-color: var(--primary); transform: translateY(-2px);
 }
-
-.quality-icon i {
-    font-size: 1.8rem;
-    color: var(--primary);
-}
-
-.quality-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.quality-text span {
-    font-size: 0.7rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.quality-text strong {
-    font-size: 0.85rem;
-    color: white;
-    font-weight: 700;
-}
+.quality-icon i { font-size: 1.8rem; color: var(--primary); }
+.quality-text { display: flex; flex-direction: column; }
+.quality-text span { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.quality-text strong { font-size: 0.85rem; color: white; font-weight: 700; }
 
 @media(max-width: 768px) {
     .modal-header-img { height: 200px; }
@@ -928,118 +988,351 @@ footer .logo img {
 }
 
 /* =========================================
-   7. MOBILE RESPONSIVE
+   9. MOBILE RESPONSIVE (Base)
    ========================================= */
 @media (max-width: 900px) {
-    section, section.page-section {
-        padding: 60px 5%;
-    }
+    section, section.page-section { padding: 60px 5%; }
+    nav { padding: 15px 20px; }
+    .hamburger { display: block; }
 
-    nav {
-        padding: 15px 20px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero, .hero-page {
-        padding-top: 120px;
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .hero-content {
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        border-left: none;
-        padding-left: 0;
-        margin: 0 auto 30px;
-    }
+    .hero, .hero-page { padding-top: 120px; height: auto; min-height: 100vh; }
+    .hero-content { padding-left: 20px; padding-right: 20px; text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { border-left: none; padding-left: 0; margin: 0 auto 30px; }
 
     .nav-links {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #0f0f0f;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 100px;
-        align-items: center;
-        gap: 30px;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow-y: auto;
-        z-index: 10000;
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+        background-color: #0f0f0f; flex-direction: column; justify-content: flex-start;
+        padding-top: 100px; align-items: center; gap: 30px;
+        transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto; z-index: 10000;
     }
+    .nav-links.nav-active { transform: translateX(0%); }
 
-    .nav-links.nav-active {
-        transform: translateX(0%);
-    }
-
-    /* Dropdown Mobile: statico e visibile solo con classe attiva */
+    /* Fix Dropdown Mobile */
     .dropdown-content {
-        position: static;
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: none;
-        border: none;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-        display: none;
-        opacity: 1;
-        transform: none;
-        animation: none;
+        position: static; background: rgba(255, 255, 255, 0.05);
+        box-shadow: none; border: none; width: 100%; text-align: center;
+        margin-top: 10px; display: none; opacity: 1; transform: none; animation: none;
     }
+    li.dropdown.active .dropdown-content { display: block; animation: fadeIn 0.3s; }
+    li.dropdown.active > a i { transform: rotate(180deg); transition: transform 0.3s; }
 
-    /* JS aggiunge la classe .active al LI */
-    li.dropdown.active .dropdown-content {
-        display: block;
-        animation: fadeIn 0.3s;
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    li.dropdown.active > a i {
-        transform: rotate(180deg);
-        transition: transform 0.3s;
-    }
+    /* Fix Centratura Mobile */
+    section, section.page-section { padding-left: 20px; padding-right: 20px; }
+    .grid-3, .grid-2, .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card, .project-card { width: 100%; margin: 0 auto; }
+}
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+/* =========================================
+   10. NUOVI LAYOUT (Formazione, ZigZag, Highlights)
+   -- INSERITI SENZA ROMPERE IL VECCHIO --
+   ========================================= */
+
+/* Hero Formazione (Specifico per formazione-aziendale.html) */
+.hero-formazione {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0 100px;
+    text-align: center;
+    position: relative;
+    /* Assicuriamo che stia sotto la nav */
+    margin-top: 0;
+}
+
+.hero-formazione h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.1;
+    text-transform: none; /* Sovrascrive il text-transform della hero base se serve */
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Fascia Icone (Highlights) */
+.highlights-bar {
+    background-color: var(--primary);
+    padding: 40px 0;
+    position: relative;
+    margin-top: -40px; /* Sovrapposizione alla hero */
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.highlights-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+
+.highlight-item {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.highlight-item i {
+    font-size: 2rem;
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.highlight-item span {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Layout Zig-Zag */
+.zigzag-container {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.zigzag-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.zigzag-text { flex: 1; }
+
+.zigzag-text h3 {
+    font-size: 2rem; color: white; margin-bottom: 20px;
+}
+
+.zigzag-text h3 span { color: var(--primary); }
+
+.zigzag-text p {
+    color: #ccc; line-height: 1.7; font-size: 1.05rem; margin-bottom: 25px;
+}
+
+.zigzag-list li {
+    color: #bbb; margin-bottom: 12px; display: flex; align-items: center;
+}
+
+.zigzag-list li i {
+    color: var(--primary); margin-right: 10px; font-size: 1.2rem;
+}
+
+.zigzag-img {
+    flex: 1; position: relative;
+}
+
+.zigzag-img img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Sezione Metodo */
+.method-section {
+    background-color: #1a1a1a;
+    padding: 100px 0;
+    margin: 100px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.method-box { text-align: center; padding: 30px; }
+.method-icon-box {
+    width: 80px; height: 80px;
+    background: rgba(255, 107, 0, 0.1);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 25px;
+    border: 2px solid var(--primary);
+}
+.method-icon-box i { font-size: 2.5rem; color: var(--primary); }
+
+/* Mobile specifico per i nuovi layout */
+@media (max-width: 900px) {
+    .highlights-grid { flex-direction: column; }
+    .highlights-bar { margin-top: 0; }
+
+    .zigzag-row, .zigzag-row.reverse { flex-direction: column; gap: 40px; }
+    .zigzag-img { order: 1; width: 100%; }
+    .zigzag-text { order: 2; }
+
+    .method-grid { grid-template-columns: 1fr; }
+
+    .hero-formazione { padding: 180px 0 100px; }
+    .hero-formazione h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 900px) {
+    .zigzag-img img {
+        height: 250px;
     }
 }
 
 /* =========================================
-   9. FIX CENTRATURA MOBILE
+   15. HERO SPECIFICHE (Italiano per Stranieri)
    ========================================= */
 
-@media (max-width: 900px) {
-    section, section.page-section {
-        padding-left: 0;
-        padding-right: 0;
-    }
+.hero-italiano {
+    /* Immagine: Un dettaglio architettonico italiano o una piazza, atmosfera calda ma business */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1529154036614-a60975f5c760?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0 100px;
+    text-align: center;
+    position: relative;
+}
 
-    .grid-3, .grid-2, .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px; /* Riduciamo leggermente il gap su mobile */
-    }
+.hero-italiano h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.1;
+}
 
-    .card, .project-card {
-        width: 100%;
-        margin: 0 auto;
-    }
+/* =========================================
+   16. LANGUAGE SWITCHER (Solo per Italiano.html)
+   ========================================= */
+.lang-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px; /* Spazio prima del titolo */
+    position: relative;
+    z-index: 10;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.lang-btn {
+    padding: 6px 18px;
+    border-radius: 50px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.lang-btn:hover {
+    color: white;
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+}
+
+/* =========================================
+   17. FAQ ACCORDION (Pagina Orientamento)
+   ========================================= */
+
+.faq-section {
+    background-color: #131313; /* Leggermente diverso dal fondo */
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Stile del tag nativo <details> per l'accordion */
+details.faq-item {
+    background: var(--bg-card);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details.faq-item:hover {
+    border-color: var(--primary);
+}
+
+details.faq-item[open] {
+    border-color: var(--primary);
+    background: rgba(255, 107, 0, 0.05); /* Sfondo leggermente arancione quando aperto */
+}
+
+summary.faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    list-style: none; /* Nasconde la freccia standard brutta */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Nasconde freccia standard su Chrome/Safari */
+summary.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+/* La nostra freccia personalizzata */
+summary.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+details.faq-item[open] summary.faq-question::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 25px 25px 25px;
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: -5px; /* Piccola correzione visiva */
+    padding-top: 15px;
 }

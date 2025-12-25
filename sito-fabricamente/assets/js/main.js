@@ -85,3 +85,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* =========================================
+   LANGUAGE SWITCHER (Globale)
+   ========================================= */
+
+// Questa funzione deve stare fuori da document.addEventListener per essere vista dall'HTML
+function setLanguage(lang) {
+    // 1. Aggiorna lo stato visivo dei bottoni
+    const buttons = document.querySelectorAll('.lang-btn');
+    buttons.forEach(btn => {
+        // Rimuove 'active' da tutti
+        btn.classList.remove('active');
+        // Aggiunge 'active' solo se il testo del bottone corrisponde alla lingua selezionata
+        if(btn.innerText.trim().toUpperCase() === lang.toUpperCase()) {
+            btn.classList.add('active');
+        }
+    });
+
+    // 2. Cerca tutti gli elementi traducibili e cambia il testo
+    const elements = document.querySelectorAll('.translatable');
+
+    elements.forEach(el => {
+        // Recupera l'attributo data-lingua corrispondente
+        const text = el.getAttribute('data-' + lang);
+
+        if (text) {
+            el.innerHTML = text; // Cambia il testo
+
+            // 3. GESTIONE ARABO (Right-to-Left)
+            if (lang === 'ar') {
+                el.setAttribute('dir', 'rtl');
+                el.style.fontFamily = "'Tajawal', sans-serif";
+                el.style.textAlign = "right";
+            } else {
+                el.removeAttribute('dir');
+                el.style.fontFamily = "";
+                el.style.textAlign = "";
+            }
+        }
+    });
+}
