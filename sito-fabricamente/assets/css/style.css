@@ -1404,3 +1404,42 @@ details.faq-item[open] summary.faq-question::after {
     border-bottom: 2px solid var(--primary);
     padding-bottom: 10px;
 }
+
+/* =========================================
+   19. AGGIORNAMENTI: GRIGLIA SCALABILE & HERO PROGETTI
+   ========================================= */
+
+/* Hero Specifica per Progetti */
+.hero-progetti {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0 100px;
+    text-align: center;
+}
+
+.hero-progetti h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.1;
+}
+
+/* Griglia Scalabile per la Home (Sezione Servizi)
+   Sostituisce le vecchie regole fisse. Se aggiungi card, vanno a capo. */
+.services-scalable-grid {
+    display: grid;
+    /* Crea tante colonne quante ce ne stanno (minimo 350px l'una) */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Fix per Mobile: una sola colonna */
+@media (max-width: 768px) {
+    .services-scalable-grid {
+        grid-template-columns: 1fr;
+    }
+}

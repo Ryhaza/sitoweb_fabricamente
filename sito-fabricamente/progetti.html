@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progetti & Case Studies | Fabricamente</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
@@ -22,7 +23,6 @@
 
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-
         <li><a href="chi-siamo.html">Chi Siamo</a></li>
 
         <li class="dropdown">
@@ -36,9 +36,7 @@
             <a href="business-coaching.html">Coaching <i class="ri-arrow-down-s-line"></i></a>
             <div class="dropdown-content">
                 <a href="business-coaching.html">Business Coaching</a>
-
                 <a href="lifecareer.html">Life & Career</a>
-
                 <a href="italiano.html">Italiano per Stranieri</a>
             </div>
         </li>
@@ -53,15 +51,23 @@
             </div>
         </li>
 
-        <li><a href="progetti.html">Progetti</a></li>
-
+        <li><a href="progetti.html" class="active">Progetti</a></li>
         <li><a href="index.html#contatti" class="btn btn-primary" style="padding: 10px 20px;">Contattaci</a></li>
     </ul>
 </nav>
 
-<header class="hero-page" style="padding-top: 120px; padding-bottom: 60px; min-height: auto;">
-    <h1>I Nostri <br><span>Progetti & Clienti</span></h1>
-    <p>Successi concreti, partnership strategiche e innovazione. Scopri come trasformiamo le idee in risultati.</p>
+<header class="hero-progetti">
+    <div class="container">
+        <h4 style="color:var(--primary); text-transform:uppercase; letter-spacing:4px; font-weight:700; margin-bottom:15px; font-size: 0.9rem;">
+            Portfolio & Case Studies
+        </h4>
+
+        <h1>I Nostri <br><span style="color: var(--primary);">Successi</span></h1>
+
+        <p class="hero-subtitle">
+            Successi concreti, partnership strategiche e innovazione. <br>Scopri come trasformiamo le idee in risultati misurabili.
+        </p>
+    </div>
 </header>
 
 <section class="page-section">
@@ -329,8 +335,8 @@
         </div>
     </div>
 </footer>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/layout.js"></script>
+
+<script type="module" src="assets/js/main.js"></script>
 
 </body>
 </html>
